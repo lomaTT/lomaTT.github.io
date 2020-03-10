@@ -1,0 +1,99 @@
+.langselect {
+  -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+   font-size: 30px;
+}
+
+body {
+	/*font-family: 'Oswald', sans-serif; */
+	font-family: 'Amatic SC', cursive;
+	/*font-weight: bold; */
+	font-size: 26px;
+}
+
+header {
+	margin-bottom: 50px;
+}
+
+a.top {
+	color: rgb(240, 112, 187);
+	text-decoration: none;
+}
+
+/*a.top:hover {
+	color: red;
+	transition: 0.5s;
+}*/
+
+.top {
+	margin: 25px;
+}
+
+table.pictures {						
+	width: 600px;
+	vertical-align: top;
+	border-spacing: 100px 0px;    
+	margin-bottom: 200px;
+}
+
+table.text {
+	width: 100%;
+}
+
+td.price {
+	margin-left: 40px;
+}
+
+table.price {
+	width: 80%;
+	height: 130px;
+}
+
+li {
+	font-size: 30px;
+	/*margin-left: 375px;
+	margin-right: 375px;*/
+	text-align: center;
+}
+
+
+h2.htext1 {
+	margin-top: 50px;
+}
+
+h2.htext2 {
+	margin-bottom: 30px;
+	margin-top: -20px;
+}
+
+a.links {
+	color: rgb(240, 112, 187);
+	text-decoration: none;
+}
+
+.color {
+	color: rgb(227, 76, 164);
+}
+
+img.photos {
+	height: 300px;
+	weight: 260px;
+}
+
+p.langselect {
+	margin-bottom: -30px; 
+	color: black;
+}
+
+ul {
+	padding: 0 0 0 0px;  
+}
+
