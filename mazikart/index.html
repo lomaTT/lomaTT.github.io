@@ -19,15 +19,21 @@
 			<a class="top" href="https://www.instagram.com/mazikart/">INSTAGRAM</a>
 		</div>
 	</header>
+	<center><select name="Choose your picture." id="choose">
+		<option value="1">Line-Art</option>
+		<option value="2">Plain Color</option>
+		<option value="3">Full Render</option>
+	</select></center>
+	<br>
 	<table align="center" class="pictures">
 		<tr>
-			<td class="left">													<!-- левая картинка и цены -->
+			<td id="left">													<!-- левая картинка и цены -->
 				<img src="img\1.png" width="260" height="300">
 			</td>
-			<td class="center">
+			<td id="center">
 				<img src="img\2.png" width="260" height="300">
 			</td>
-			<td class="right">
+			<td id="right">
 				<img src="img\3.png" width="260" height="300">
 			</td>
 			<!--<td class="commishes">
@@ -35,19 +41,19 @@
 			</td> -->
 		</tr>
 		<tr>
-			<td>
+			<td id="left">
 				<p align="center">Лайн-арт</p>
 			</td>
-			<td>
+			<td id="center">
 				<p align="center">Плоский Цвет</p>
 			</td>
-			<td>
+			<td id="right">
 				<p align="center">Полный рендер</p>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				<table align="center" class="price">
+				<table align="center" class="price" id="left">
 					<tr>
 						<td align="left" class="onecharacter">Один персонаж</td>
 						<td align="right" class="color">15$</td>
@@ -67,43 +73,35 @@
 				</table>
 			</td>
 			<td>
-				<table align="center" class="price">
+				<table align="center" class="price" id="center">
 					<tr>
 						<td align="left" class="onecharacter">Один персонаж</td>
-						<td align="right" class="color">20$</td>
+						<td align="right" class="color">15$</td>
 					</tr>
 					<tr>
 						<td class="simpleback">Простой фон</td>
-						<td align="right" class="color">10$</td>
-					</tr>
-					<tr>
-						<td class="hardback">Сложный фон</td>
-						<td align="right" class="color">20$</td>
+						<td align="right" class="color">5$</td>
 					</tr>
 					<tr>
 						<td class="person">Дополнительный персонаж</td>
-						<td align="right" class="color">+15$</td>
+						<td align="right" class="color">+10$</td>
 					</tr>
 				</table>
 			</td>
 			</td>
 			<td>
-				<table align="center" class="price">
+				<table align="center" class="price" id="right">
 					<tr>
 						<td align="left" class="onecharacter">Один персонаж</td>
-						<td align="right" class="color">40$</td>
-					</tr>
-					<tr>
-						<td class="simpleback">Простой фон</td>
 						<td align="right" class="color">15$</td>
 					</tr>
 					<tr>
-						<td class="hardback">Сложный фон</td>
-						<td align="right" class="color">30$</td>
+						<td class="simpleback">Простой фон</td>
+						<td align="right" class="color">5$</td>
 					</tr>
 					<tr>
 						<td class="person">Дополнительный персонаж</td>
-						<td align="right" class="color">+30$</td>
+						<td align="right" class="color">+10$</td>
 					</tr>
 				</table>
 			</td>
@@ -135,4 +133,3 @@
 		<h6 align="center">Все персонажи старше 18 лет.</h6>
 	</div>
 </body>
-</html>

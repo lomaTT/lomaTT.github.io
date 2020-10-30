@@ -57,12 +57,7 @@ table.price {
 	height: 130px;
 }
 
-li {
-	font-size: 30px;
-	/*margin-left: 375px;
-	margin-right: 375px;*/
-	text-align: center;
-}
+
 
 
 h2.htext1 {
@@ -99,4 +94,10 @@ ul {
 
 .description {
 	text-align: center;
+}
+
+select {
+	width: 20%;
+	background: #FFC0CB;
+	border-style: 1px;
 }
