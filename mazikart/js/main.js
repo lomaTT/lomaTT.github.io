@@ -103,10 +103,11 @@ $(document).ready(function() {
 	}); 
 	if (window.screen.width <= 800) {
 			
-			$("td#center").hide('500');
-			$("table#center").hide('500');
-			$("td#right").hide('500');
-			$("table#right").show('500');
+			$("td#center").hide(500);
+			$("table#center").hide(500);
+			$("td#right").hide(500);
+			$("table#right.price").hide(500);
+		
 		var select = document.querySelector('select');
 			select.addEventListener('change', () => {
   			
