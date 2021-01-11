@@ -20,3 +20,9 @@ a:hover {
 	transition: 1s;
 	color: white;
 }
+
+table {
+	width: 500;
+	height: auto;
+	max-width: 100%;
+}
