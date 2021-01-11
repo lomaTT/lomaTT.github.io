@@ -4,8 +4,8 @@ function month(i) {
 }
 
 function minutes(i) {
-    if (i === undefined) return '00';
     if (i < 10) return '0' + Number(i);
+    return Number(i);
 }
 
 var date = new Date()
