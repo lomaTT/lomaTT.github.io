@@ -21,6 +21,7 @@ height: auto;
     color:black;
     font-size: 30px;
     text-decoration: none;
+    margin: 0 auto;
 
 }
 
@@ -49,3 +50,6 @@ body {
     font-family: 'Yusei Magic', sans-serif;
 }
 
+.wiki {
+    text-align: center;
+}
