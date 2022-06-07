@@ -1,38 +1,6 @@
-[
-  {
-    "id": 0,
-    "data": {
-      "nazwa": "Warszawa"
-    }
-  },
-  {
-    "id": 1,
-    "data": {
-      "nazwa": "Kraków"
-    }
-  },
-  {
-    "id": 2,
-    "data": {
-      "nazwa": "Poznań"
-    }
-  },
-  {
-    "id": 3,
-    "data": {
-      "nazwa": "Wrocław"
-    }
-  },
-  {
-    "id": 4,
-    "data": {
-      "nazwa": "Lublin"
-    }
-  },
-  {
-    "id": 5,
-    "data": {
-      "nazwa": "Trójmiasto"
-    }
-  },
-]
+Warszawa
+Kraków
+Poznań
+Wrocław
+ Lublin
+ Trójmiasto
