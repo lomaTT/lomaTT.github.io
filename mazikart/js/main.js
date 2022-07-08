@@ -101,47 +101,6 @@ $(document).ready(function() {
 		language = 'rus';
 		}
 	}); 
-	if (window.screen.width <= 800) {
-			
-			$("td#center").hide(500);
-			$("table#center").hide(500);
-			$("td#right").hide(500);
-			$("table#right.price").hide(500);
-		
-		var select = document.querySelector('select');
-			select.addEventListener('change', () => {
-  			
-		
-		if (select.value == 1) { 
-			$("td#center").hide(1000);
-			
-			$("td#right").hide(1000);
-			 
-			$("td#left").show(3000);
-			$("table#left").show(3000);
-		}
-		
-		if (select.value == 2) { 
-			$("td#left").hide(1000);
-			$("table#left").hide(1000);
-			$("td#right").hide(1000);
-			$("td#center").show(3000);
-			$("table#left").show(3000);
-		}
-		if (select.value == 3) { 
-			$("td#left").hide(1000);
-			$("table#left").hide(1000);
-			$("td#center").hide(1000);
-			$("td#right").show(3000);
-			$("table#left").show(3000);
-		}
-		});
-
-		} 
-		else 
-		{
-			$('select').hide(0);
-		}
 
 });
 
