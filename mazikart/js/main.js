@@ -8,7 +8,7 @@ $(document).ready(function() {
 	$(".hardback:contains('Сложный фон')").text("Difficult background");
 	$(".person:contains('Дополнительный персонаж')").text("Additional character"); 
 	$(".htext").text("Please, be so kind as to read this proposal with full attention.") 
-	$(".t:contains('Если Вы хотите')").html('The best way to contact me: <a class="links" href="https://www.instagram.com/mazikart/">Instagram</a>, <a href="https://twitter.com/mazikart" class="links">Twitter</a> or my <a class="links" href="mailto:egorkamazik@gmail.com?=About art.">e-mail</a>. Commission must not violate neither your countrys or USAs law.');
+	$(".t:contains('Если Вы хотите')").html('The best way to contact me: <a class="links" href="https://lomatt.github.io">Instagram</a>, <a href="https://lomatt.github.io" class="links">Twitter</a> or my <a class="links" href="https://lomatt.github.io">e-mail</a>. Commission must not violate neither your countrys or USAs law.');
 	$(".t:contains('Проверьте, открыта ли комиссия')").html('Please, be so kind as to ensure whether the commission is visible in the header of the website,\
 															 then contact me and we will discuss all the details as well as the price.<br> You will be charged a\
 															 deposit fee in advance. Once I verify the deposit payment, I will proceed with the project\
@@ -49,7 +49,7 @@ $(document).ready(function() {
 		$(".hardback:contains('Сложный фон')").text("Difficult background");
 		$(".person:contains('Дополнительный персонаж')").text("Additional character");
 		$(".htext").text("Please, be so kind as to read this proposal with full attention.")
-		$(".t:contains('Если Вы хотите')").html('The best way to contact me: <a class="links" href="https://www.instagram.com/mazikart/">Instagram</a>, <a href="https://twitter.com/mazikart" class="links">Twitter</a> or my <a class="links" href="mailto:egorkamazik@gmail.com?=About art.">e-mail</a>. Commission must not violate neither your countrys or USAs law.');
+		$(".t:contains('Если Вы хотите')").html('The best way to contact me: <a class="links" href="https://lomatt.github.io">Instagram</a>, <a href="https://lomatt.github.io" class="links">Twitter</a> or my <a class="links" href="https://lomatt.github.io">e-mail</a>. Commission must not violate neither your countrys or USAs law.');
 		$(".t:contains('Проверьте, открыта ли комиссия')").html('Please, be so kind as to ensure whether the commission is visible in the header of the website,\
 																 then contact me and we will discuss all the details as well as the price.<br> You will be charged a\
 																 deposit fee in advance. Once I verify the deposit payment, I will proceed with the project\
@@ -82,7 +82,7 @@ $(document).ready(function() {
 		$(".hardback:contains('Difficult background')").text("Сложный фон");
 		$(".person:contains('Additional character')").text("Дополнительный персонаж");
 		$(".htext").text("Пожалуйста, прочитайте это внимательно!")
-		$(".t:contains('The best way to contact me')").html('Если Вы хотите со мной связаться то лучше всего написать мне в <a class="links" href="https://www.instagram.com/mazikart/">Instagram</a>, <a href="https://twitter.com/mazikart" class="links">Twitter</a>, или на <a class="links" href="mailto:egorkamazik@gmail.com?=По поводу арта.">почту</a>. Комиссия не должна нарушать закон Вашей страны.');
+		$(".t:contains('The best way to contact me')").html('Если Вы хотите со мной связаться то лучше всего написать мне в <a class="links" href="https://lomatt.github.io">Instagram</a>, <a href="https://lomatt.github.io" class="links">Twitter</a>, или на <a class="links" href="https://lomatt.github.io">почту</a>. Комиссия не должна нарушать закон Вашей страны.');
 		$(".t:contains('Please, be so kind as to ensure whether')").text('Проверьте, открыта ли комиссия в заголовке этого веб-сайта, после чего свяжитесь со мной и мы обсудим все детали и цену. С Вас взимается предоплата. Я проверяю оплату и начинаю работать.')
 		$(".t:contains('Do not send less amount')").text('Не присылайте cумму меньше той, о которой мы договаривались.')
 		$(".t:contains('No refunds are avaliable.')").text('Я не занимаюсь возвратом средств.')

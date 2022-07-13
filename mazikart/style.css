@@ -99,5 +99,62 @@ ul {
 select {
 	width: 20%;
 	background: #FFC0CB;
-	border-style: 1px;
+}
+
+.catalog {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+}
+
+#first-section > img, #second-section > img, #third-section > img {
+	max-width: 100%;
+	width: 300px;
+	height: auto;
+}
+
+.name-of-product {
+	text-align: center;
+}
+
+.description-of-product {
+	width: 75%;
+	margin: 0 auto;
+	padding-bottom: 10px;
+}
+
+header > h1, h6, .htext1, .htext2 {
+	text-align: center;
+}
+
+.htext {
+	text-align: center;
+}
+
+.product-text > p > a {
+	float: right;
+	color: #d52cc7;
+	text-align: right;
+}
+
+.langselect {
+	text-align: right;
+}
+
+.links {
+	text-align: center;
+}
+
+#first-section, #second-section, #third-section {
+	margin: 0 30px;
+}
+
+@media only screen and (max-width: 1000px) {
+	.catalog {
+		flex-direction: column;
+	}
+	#first-section, #second-section {
+		padding-bottom: 30px;
+	}
 }
