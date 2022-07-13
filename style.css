@@ -85,7 +85,8 @@ body {
 }
 
 #projects > h1 {
-    padding: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     font-weight: bolder;
     width: 100%;
 
