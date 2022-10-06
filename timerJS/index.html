@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js"></script>
+  <title>TimerJS</title>
+</head>
+<body>
+  <header>
+    <h1>TimerJS</h1>
+  </header>
+  <div class="main-content">
+    <div id="main-text">
+      Hello! This is a timer, that can help you to count your time. <br>
+      Please, choose seconds, minutes or hours, that you want count.
+    </div>
+    <form>
+      <div id="inputs">
+        <br>
+        <input type="number" placeholder="Hours" id="timerHours">
+        <input type="number" placeholder="Minutes" id="timerMinutes">
+        <input type="number" placeholder="Seconds" id="timerSeconds">
+      </div>
+      <div id="warning">
+      </div>
+      <div id="buttons">
+        <br>
+        <button class="start" role="button" onclick="verify()" type="button">Start!</button>
+        <input type="reset" class="start" onclick="resetButton()">
+      </div>
+    </form>
+  </div>
+  <div class="timer">
+    <div id="numbers">
+      <div id="hours"></div>
+      <div class="colon">:</div>
+      <div id="minutes"></div>
+      <div class="colon">:</div>
+      <div id="seconds"></div>
+    </div>
+    <div id="endMessage"><h3>That is all!</h3></div>
+    <div id="eta"></div>
+    <div id="timer-buttons">
+      <button class="start" role="button" onclick="emergencyStopTimer()" type="button" id="stopTimerButton">Stop timer!</button>
+      <button class="stop" role="button" onclick="refreshPage()" type="button" id="refreshPageButton">Refresh</button>
+    </div>
+  </div>
+</body>
+</html>
