@@ -108,7 +108,7 @@ body {
 
 .projects_images > a {
     display: inline-block;
-    max-width: 500px;
+    max-width: 400px;
     margin: 0 auto;
     padding: 30px;
     border: 3px solid black;
@@ -130,11 +130,12 @@ body {
     }
 }
 
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 1500px) {
     .projects_images {
         flex-direction: column;
     }
     .projects_images > a {
         margin: 20px auto;
+        max-width: 600px;
     }
 }
