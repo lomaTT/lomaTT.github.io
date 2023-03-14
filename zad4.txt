@@ -1,0 +1,76 @@
+//
+//  ContentView.swift
+//  Lab2_4
+//
+//  Created by IvanF on 14/03/2023.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    @State private var number1 = ""
+        @State private var number2 = ""
+        @State private var operation = "+"
+        @State private var result = ""
+        
+        var body: some View {
+            VStack {
+                TextField("Liczba 1", text: $number1)
+                    .keyboardType(.numberPad)
+                    .padding()
+                TextField("Liczba 2", text: $number2)
+                    .keyboardType(.numberPad)
+                    .padding()
+                HStack {
+                    Button("+", action: {
+                        performOperation()
+                        operation = "+"
+                    })
+                    Button("-", action: {
+                        performOperation()
+                        operation = "-"
+                    })
+                    Button("*", action: {
+                        performOperation()
+                        operation = "*"
+                    })
+                    Button("/", action: {
+                        if Int(number2) == 0 {
+                            result = "Nie można dzielić przez 0"
+                        } else {
+                            performOperation()
+                            operation = "/"
+                        }
+                    })
+                }
+                .padding(.vertical)
+                Text(result)
+                    .padding()
+            }
+        }
+        
+        func performOperation() {
+            if let num1 = Int(number1), let num2 = Int(number2) {
+                switch operation {
+                case "+":
+                    result = String(num1 + num2)
+                case "-":
+                    result = String(num1 - num2)
+                case "*":
+                    result = String(num1 * num2)
+                case "/":
+                    result = String(num1 / num2)
+                default:
+                    break
+                }
+            } else {
+                result = "Wprowadź poprawne liczby"
+            }
+        }
+    }
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}

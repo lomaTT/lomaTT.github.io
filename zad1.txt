@@ -1,0 +1,30 @@
+//
+//  ContentView.swift
+//  Lab2_1
+//
+//  Created by IvanF on 13/03/2023.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    let tablica_kolorow = [Color.red, Color.orange, Color.yellow, Color.green, Color.blue, Color.purple]
+    var body: some View {
+        ZStack{
+            ForEach(0..<tablica_kolorow.count){
+                 Rectangle()
+                    .fill(tablica_kolorow[$0])
+                    .frame(width:100, height:100)
+                    .offset(x:CGFloat($0)*10.0 , y:CGFloat($0)*10.0)
+            }
+            
+        }
+        
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}

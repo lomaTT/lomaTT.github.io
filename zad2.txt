@@ -1,0 +1,43 @@
+//
+//  ContentView.swift
+//  Lab2_2
+//
+//  Created by IvanF on 14/03/2023.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        ZStack {
+            Image("dog")
+                        .resizable()
+                        .scaledToFit()
+                    
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("Pieski")
+                                .foregroundColor(.primary )
+                                .fontWeight(.medium)
+                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                            Text("Nieznany autor")
+                                .foregroundColor(.primary)
+                                .fontWeight(.medium)
+                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                            
+                        }
+                        Spacer()
+                    }
+                    .padding()
+                    .background(Color.primary.opacity(0.0))
+                    .offset(y: 130)
+                }
+
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
