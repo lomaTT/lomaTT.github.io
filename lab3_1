@@ -1,0 +1,57 @@
+//
+//  ContentView.swift
+//  lab3_1
+//
+//  Created by student on 14/03/2023.
+//  Copyright © 2023 PL. All rights reserved.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    @State private var clicks: Int = 0
+    var body: some View {
+        VStack {
+            Text("Wciśnij przycisk")
+            PanelView(clicks: $clicks)
+            Text("Wciśnięto \(clicks) razy!")
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+
+//
+//  PanelView.swift
+//  lab3_1
+//
+//  Created by student on 14/03/2023.
+//  Copyright © 2023 PL. All rights reserved.
+//
+
+
+import SwiftUI
+
+struct PanelView: View {
+    @Binding var clicks: Int
+    
+    init(clicks: Binding<Int>) {
+        self._clicks = clicks
+    }
+    
+    var body: some View {
+        Button(action: {
+            self.clicks += 1
+        }) {
+            Text("Wciśnij")
+            .padding()
+            .background(Color.gray)
+            .foregroundColor(.green)
+            .cornerRadius(30)
+        }.padding()
+    }
+}
