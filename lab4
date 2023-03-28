@@ -1,0 +1,208 @@
+Ваня:
+//
+//  ContentView.swift
+//  lab41
+//
+//  Created by Ivan Filipchuk on 22/03/2023.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    @State private var selectedBuyCurrency = "USD"
+        @State private var selectedPayCurrency = "EUR"
+        @State private var inputAmount = ""
+        let currencies = ["USD", "EUR", "GBP", "JPY", "AUD", "CAD", "CHF", "CNY", "HKD", "NZD"]
+        
+        let companyName = "ABC Currency Exchange"
+        let companyHours = "Mon-Fri: 9am-5pm"
+        let companyContact = "123-456-7890"
+        
+        var convertedAmount: Double {
+            let amount = Double(inputAmount) ?? 0
+            let rate = getExchangeRate(for: selectedBuyCurrency, and: selectedPayCurrency)
+            return amount * rate
+        }
+
+    var body: some View {
+        NavigationView {
+                    Form {
+                        Section(header: Text("Exchange Information")) {
+                            Text(companyName)
+                            Text(companyHours)
+                            Text(companyContact)
+                        }
+                        Section(header: Text("Buy Currency")) {
+                            Picker(selection: $selectedBuyCurrency, label: Text("Select Buy Currency")) {
+                                ForEach(currencies, id: \.self) { currency in
+                                    Text(currency)
+                                }
+                            }
+                            .pickerStyle(MenuPickerStyle())
+                        }
+                        Section(header: Text("Pay Currency")) {
+                            Picker(selection: $selectedPayCurrency, label: Text("Select Pay Currency")) {
+                                ForEach(currencies, id: \.self) { currency in
+                                    Text(currency)
+                                }
+                            }
+                            .pickerStyle(MenuPickerStyle())
+                        }
+                        Section(header: Text("Enter Buy Amount")) {
+                            TextField("Enter Amount", text: $inputAmount)
+                                .keyboardType(.decimalPad)
+                        }
+                        Section(header: Text("Total Pay Amount")) {
+                            Text(String(format: "%.2f", convertedAmount))
+                        }
+                    }
+                    .navigationBarTitle("Currency Exchange")
+                    .navigationBarItems(trailing:
+                        Button(action: {
+                            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                        }, label: {
+                            Text("Dismiss Keyboard")
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color.blue)
+                                .cornerRadius(8.0)
+                        })
+                    )
+                                   }
+            }
+            
+            // Function that returns the exchange rate for the selected currency pair
+            func getExchangeRate(for buyCurrency: String, and payCurrency: String) -> Double {
+                // This is just a sample function - in reality, exchange rates should be fetched from an external source, e.g. from the internet
+                switch (buyCurrency, payCurrency) {
+                case ("USD", "EUR"):
+                    return 0.9
+                case ("USD", "GBP"):
+                    return 0.8
+                default:
+                    return 1
+                }
+            }
+        }
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+                
+            -------------------------------------
+
+//
+//  ContentView.swift
+//  lab42
+//
+//  Created by Ivan Filipchuk on 23/03/2023.
+//
+
+import SwiftUI
+
+enum ShapeType: String, CaseIterable {
+    case rectangle = "Prostokąt"
+    case circle = "Koło"
+    case triangle = "Trójkąt"
+}
+
+
+
+struct ContentView: View {
+    @State private var shapeType = ShapeType.rectangle
+    @State private var shapeColor = Color.blue
+    @State private var frameWidth = ""
+    @State private var frameHeight = ""
+    @State private var addFrame = false
+    var body: some View {
+        VStack {
+            Picker(selection: $shapeType, label: Text("Kształt figury")) {
+                ForEach(ShapeType.allCases, id: \.self) { shape in
+                    Text(shape.rawValue)
+                }
+            }//.pickerStyle(RadioGroupPickerStyle())
+            
+            ColorPicker("Kolor figury", selection: $shapeColor)
+            
+            VStack(alignment: .leading) {
+                Text("Wymiary ramki")
+                HStack {
+                    TextField("szerokość", text: $frameWidth)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .keyboardType(.decimalPad)
+                        .frame(width: 100)
+                    
+                    TextField("wysokość", text: $frameHeight)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .keyboardType(.decimalPad)
+                        .frame(width: 100)
+                }
+            }
+            
+            Toggle(isOn: $addFrame) {
+                Text("Dodaj ramkę")
+            }
+            
+            Spacer()
+            
+            if let width = Double(frameWidth), let height = Double(frameHeight) {
+                let shapeView = getShapeView(for: shapeType, color: shapeColor, frameSize: CGSize(width: width, height: height), addFrame: addFrame)
+                shapeView
+                    .frame(width: 200, height: 200)
+                    .border(Color.black)
+            } else {
+                Text("Podaj wymiary ramki")
+                    .foregroundColor(.red)
+            }
+        }
+        .padding()
+    }
+    
+    struct Triangle: Shape {
+        func path(in rect: CGRect) -> Path {
+            var path = Path()
+            path.move(to: CGPoint(x: rect.midX, y: rect.minY))
+            path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+            path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+            path.addLine(to: CGPoint(x: rect.midX, y: rect.minY))
+            return path
+        }
+    }
+
+    func getShapeView(for shapeType: ShapeType, color: Color, frameSize: CGSize, addFrame: Bool) -> AnyView {
+        switch shapeType {
+        case .rectangle:
+            let shapeView = Rectangle()
+                .foregroundColor(color)
+            if addFrame {
+                return AnyView(shapeView.border(Color.black, width: 10))
+            } else {
+                return AnyView(shapeView)
+            }
+        case .circle:
+            let shapeView = Circle()
+                .foregroundColor(color)
+            if addFrame {
+                return AnyView(shapeView.overlay(Circle().stroke(Color.black, lineWidth: 10)))
+            } else {
+                return AnyView(shapeView)
+            }
+        case .triangle:
+            let shapeView = Triangle()
+                .foregroundColor(color)
+            if addFrame {
+                return AnyView(shapeView.overlay(Triangle().stroke(Color.black, lineWidth: 10)))
+            } else {
+                return AnyView(shapeView)
+            }
+        }
+    }
+
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+}
