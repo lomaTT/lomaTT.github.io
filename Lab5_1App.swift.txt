@@ -1,0 +1,193 @@
+```
+//
+//  ContentView.swift
+//  Lab5_1
+//
+//  Created by Ivan Filipchuk on 27/03/2023.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        /*NavigationView {
+                    TriangleView()
+                        .navigationBarTitle("Figury geometryczne")
+                }*/
+        TabView {
+                    NavigationView {
+                        TriangleView()
+                            .navigationBarTitle("Figury ")
+                    }
+                    .tabItem {
+                        Image(systemName: "triangle")
+                        Text("Trójkąt")
+                    }
+                    
+                    NavigationView {
+                        SquareView()
+                            .navigationBarTitle("Kwadrat")
+                    }
+                    .tabItem {
+                        Image(systemName: "square")
+                        Text("Kwadrat")
+                    }
+                    
+                    NavigationView {
+                        RectangleView()
+                            .navigationBarTitle("Prostokąt")
+                    }
+                    .tabItem {
+                        Image(systemName: "rectangle")
+                        Text("prostokąt")
+                    }
+                }
+            }            }
+    
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+
+//
+//  Lab5_1App.swift
+//  Lab5_1
+//
+//  Created by Ivan Filipchuk on 27/03/2023.
+//
+
+import SwiftUI
+
+@main
+struct Lab5_1App: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}
+
+//
+//  SquareView.swift
+//  Lab5_1
+//
+//  Created by Ivan Filipchuk on 27/03/2023.
+//
+
+import SwiftUI
+
+struct SquareView: View {
+    var body: some View {
+        VStack {
+            Text("Widok 2 - Kwadrat")
+                .font(.headline)
+            NavigationLink(destination: RectangleView()) {
+                Text("Przejdź do widoku 3")
+            }
+            VStack {
+                       ZStack {
+                           Rectangle()
+                               .fill(Color.green)
+                               .frame(width: 210, height: 210)
+                           
+                           VStack(spacing: 0) {
+                               HStack(spacing: 0) {
+                                   Rectangle()
+                                       .fill(Color.yellow)
+                                       .frame(width: 100, height: 100)
+                                   Rectangle()
+                                       .fill(Color.red)
+                                       .frame(width: 100, height: 100)
+                               }
+                               
+                               Rectangle()
+                                   .fill(Color.blue)
+                                   .frame(width: 200, height: 100)
+                           }
+                       }
+                   }
+    }
+}
+
+struct SquareView_Previews: PreviewProvider {
+    static var previews: some View {
+        SquareView()
+    }
+}
+}
+
+//
+//  TriangleView.swift
+//  Lab5_1
+//
+//  Created by Ivan Filipchuk on 27/03/2023.
+//
+
+import SwiftUI
+
+struct TriangleView: View {
+    var body: some View {
+        VStack {
+                    Text("Widok 1 - Trójkąt")
+                        .font(.headline)
+                    Image(systemName: "triangle")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                    NavigationLink(destination: SquareView()) {
+                        Text("Przejdź do widoku 2")
+                    }
+                }
+    }
+struct TriangleView_Previews: PreviewProvider {
+    static var previews: some View {
+        TriangleView()
+    }
+}
+}
+
+//
+//  RectangleView.swift
+//  Lab5_1
+//
+//  Created by Ivan Filipchuk on 27/03/2023.
+//
+
+import SwiftUI
+
+struct RectangleView: View {
+    var body: some View {
+        VStack {
+                    Text("Widok 3 - Prostokąt")
+                        .font(.headline)
+                }
+        VStack {
+                    ZStack {
+                        Rectangle()
+                            .fill(Color.blue)
+                            .frame(width: 200, height: 200)
+                        
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color.green)
+                            .frame(width: 180, height: 180)
+                        
+                        Capsule()
+                            .fill(Color.yellow)
+                            .frame(width: 140, height: 100)
+                        
+                        Circle()
+                            .fill(Color.red)
+                            .frame(width: 80, height: 80)
+                    }
+                }
+    }
+}
+
+struct RectangleView_Previews: PreviewProvider {
+    static var previews: some View {
+        RectangleView()
+    }
+}
+
+```

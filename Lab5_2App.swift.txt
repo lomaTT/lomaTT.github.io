@@ -1,0 +1,136 @@
+//
+//  Lab5_2App.swift
+//  Lab5_2
+//
+//  Created by Ivan Filipchuk on 28/03/2023.
+//
+
+import SwiftUI
+
+@main
+struct Lab5_2App: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}
+
+//
+//  AudiView.swift
+//  Lab5_2
+//
+//  Created by Ivan Filipchuk on 28/03/2023.
+//
+
+import SwiftUI
+
+struct AudiView: View {
+    var body: some View {
+        VStack {
+                    Text("Audi Models")
+                    // Wyświetl informacje o modelach samochodów Toyota
+            NavigationLink(destination: ContentView()) {
+                Text("Back")
+                    }
+                }
+                .navigationTitle("Audi")
+
+    }
+}
+
+struct AudiView_Previews: PreviewProvider {
+    static var previews: some View {
+        AudiView()
+    }
+}
+
+//
+//  BmwView.swift
+//  Lab5_2
+//
+//  Created by Ivan Filipchuk on 28/03/2023.
+//
+
+import SwiftUI
+
+struct BmwView: View {
+    var body: some View {
+        VStack {
+                    Text("BMW Models")
+                    // Wyświetl informacje o modelach samochodów BMW
+            NavigationLink(destination: ContentView()) {
+                Text("Back")
+            }
+                }
+                .navigationTitle("BMW")
+    }
+}
+
+struct BmwView_Previews: PreviewProvider {
+    static var previews: some View {
+        BmwView()
+    }
+}
+
+//
+//  ContentView.swift
+//  Lab5_2
+//
+//  Created by Ivan Filipchuk on 28/03/2023.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        NavigationView {
+                    VStack {
+                        NavigationLink(destination: AudiView()) {
+                            Text("Audi")
+                        }
+                        NavigationLink(destination: BmwView()) {
+                            Text("BMW")
+                        }
+                        NavigationLink(destination: MersedesView()) {
+                            Text("Mersedes Benz")
+                        }
+                    }
+                    .navigationTitle("Choose a car brand")
+                }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+
+//
+//  MersedesView.swift
+//  Lab5_2
+//
+//  Created by Ivan Filipchuk on 28/03/2023.
+//
+
+import SwiftUI
+
+struct MersedesView: View {
+    var body: some View {
+        VStack {
+                   Text("Mersedes Benz Models")
+                   // Wyświetl informacje o modelach samochodów Ford
+            NavigationLink(destination: ContentView()) {
+                Text("Back")
+                    }
+               }
+               .navigationTitle("Mersedes Benz")
+    }
+}
+
+struct MersedesView_Previews: PreviewProvider {
+    static var previews: some View {
+        MersedesView()
+    }
+}
