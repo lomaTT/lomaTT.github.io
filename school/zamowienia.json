@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "data": {
+      "dayOfDelivery": "Inny termin",
+      "deliveryMethod": "Dostawa z użyciem transportu państwa",
+      "homeAddress": "nadbystrzycka 42A",
+      "mobilePhone": "+48576598891",
+      "name": "yurii",
+      "paymentMethod": "MasterCard",
+      "secondName": "maisuradze"
+    }
+},
+  {
+    "id": 1,
+    "data": {
+      "dayOfDelivery": "Dostawa na dzisiaj",
+      "deliveryMethod": "Dostawa od naszego sklepu",
+      "homeAddress": "nadbystrzycka 42A",
+      "mobilePhone": "+48576598891",
+      "name": "aliaksei",
+      "paymentMethod": "Visa",
+      "secondName": "lomats"
+    }
+  }
+]
