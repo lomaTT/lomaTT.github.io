@@ -1,0 +1,26 @@
+//
+//  TableView.swift
+//  Lab8
+//
+//  Created by student on 20/04/2023.
+//
+
+import SwiftUI
+
+struct TableView: View {
+    @Binding var wydarzenie : Wydarzenie
+    var body: some View{
+        HStack
+        {
+            Image(wydarzenie.obraz).resizable()
+                .scaledToFit()
+            VStack{
+                Text(wydarzenie.name)
+                Text(String(wydarzenie.czas))
+                }
+            }
+        }
+
+    }
+
+

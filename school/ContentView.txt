@@ -1,43 +1,42 @@
 //
 //  ContentView.swift
-//  Lab2_2
+//  Lab8
 //
-//  Created by IvanF on 14/03/2023.
+//  Created by student on 20/04/2023.
 //
 
 import SwiftUI
-
+struct Wydarzenie:Identifiable
+{
+    var id: Int
+    
+var name:String,
+czas:Int,
+    obraz:String
+}
 struct ContentView: View {
+    @State var Wydarzenia:[Wydarzenie]=[Wydarzenie(id:1,name: "Wydarzenie1", czas: 0,obraz:"1"),Wydarzenie(id:2,name: "Wydarzenie2", czas: 0,obraz:"2")]
     var body: some View {
-        ZStack {
-            Image("dog")
-                        .resizable()
-                        .scaledToFit()
-                    
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("Pieski")
-                                .foregroundColor(.primary )
-                                .fontWeight(.medium)
-                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                            Text("Nieznany autor")
-                                .foregroundColor(.primary)
-                                .fontWeight(.medium)
-                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                            
+        VStack {
+            NavigationView{
+                
+                List{
+                    Section("Wydarzenia", content: {
+                        ForEach($Wydarzenia) { wyd in
+                            NavigationLink(
+                                destination :
+                                    EditorView(wydarzenie: wyd)){TableView(wydarzenie: wyd)}
                         }
-                        Spacer()
-                    }
-                    .padding()
-                    .background(Color.primary.opacity(0.0))
-                    .offset(y: 130)
+                    })
                 }
-
+            }
+            .padding()
+        }
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
-}
+
