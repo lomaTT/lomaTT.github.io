@@ -1,0 +1,17 @@
+//
+//  Lab8App.swift
+//  Lab8
+//
+//  Created by student on 04/05/2023.
+//
+
+import SwiftUI
+
+@main
+struct Lab8App: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}

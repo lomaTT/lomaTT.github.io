@@ -1,0 +1,38 @@
+//
+//  ContentView.swift
+//  Lab82
+//
+//  Created by student on 20/04/2023.
+//
+
+import SwiftUI
+struct Car{
+ let brand: String
+ let brandImg: String
+}
+struct ContentView: View {
+    @State var choiceOption = ""
+    @State var chosenColor:Color = .black
+   
+    var body: some View {
+  
+        ZStack
+        {
+            
+            OptionFile(choiceOption: $choiceOption).position(x: 30, y: 30)
+            VStack{
+                Text("Wybrana opcja: \(choiceOption)").foregroundColor(chosenColor)
+                Spacer()
+                ColorsView(chosenColor: $chosenColor)
+             }
+        }
+      
+
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
