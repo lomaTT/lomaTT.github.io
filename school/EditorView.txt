@@ -1,0 +1,33 @@
+//
+//  TableView.swift
+//  Lab8
+//
+//  Created by student on 20/04/2023.
+//
+
+
+import SwiftUI
+
+struct EditorView: View {
+    @Binding var wydarzenie : Wydarzenie
+    @State private var time:Double = 0
+    @State private var name:String = ""
+    var body: some View{
+        VStack{
+
+            TextField(wydarzenie.name, text: $name).padding().background(.purple).foregroundColor(.white)
+            Text(String(Int(time)))
+            Slider(value:$time,in: 0...150,step:5,onEditingChanged: {_ in })
+            }
+        Button("Zapisz",action:
+               {
+            wydarzenie.name=name
+            wydarzenie.czas=Int(time)
+        })
+
+        }
+    
+    }
+
+
+
