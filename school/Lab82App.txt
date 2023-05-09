@@ -1,0 +1,17 @@
+//
+//  Lab82App.swift
+//  Lab82
+//
+//  Created by student on 20/04/2023.
+//
+
+import SwiftUI
+
+@main
+struct Lab82App: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}

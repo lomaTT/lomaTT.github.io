@@ -1,0 +1,60 @@
+//
+//  ContentView.swift
+//  Lab82
+//
+//  Created by student on 20/04/2023.
+//
+
+import SwiftUI
+struct Car{
+ let brand: String
+ let brandImg: String
+}
+struct ContentView: View {
+    @State var cars =
+     [Car(brand: "Ford", brandImg: "ford"),
+     Car(brand: "Fiat", brandImg: "fiat"),
+     Car(brand: "Volkswagen", brandImg: "vw"),
+     Car(brand: "Mitsubishi", brandImg: "mitsubishi")]
+    var body: some View {
+        VStack{
+         List{
+         ForEach(cars, id: \.brand){ car in
+         HStack{
+         Image(car.brandImg)
+         .resizable()
+        .frame(width: 30, height: 30, alignment:
+         .center)
+         .scaledToFit()
+
+         Text(car.brand)
+         }
+         }
+         }
+         .listStyle(.insetGrouped)
+         }
+       Menu()
+        {
+            Text("Option1")
+            Text("Option2")
+            Text("Option3")
+        }label: {
+            Button(
+                action: {},
+                label: {
+                    ZStack {
+                       Image(systemName: "gear")
+                            .resizable().frame(width: 30,height: 30)
+                    }
+                }
+            )
+            .padding(20)
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
