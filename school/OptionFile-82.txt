@@ -1,0 +1,51 @@
+//
+//  OptionFile.swift
+//  Lab8
+//
+//  Created by student on 04/05/2023.
+//
+
+import SwiftUI
+
+struct OptionFile: View {
+    @Binding var choiceOption: String
+    var body: some View {
+        Menu()
+         {
+             Button(
+                action: {choiceOption="Option1"},label:{Text("Option1")})
+             Menu()
+             {
+                 Button(
+                    action: {choiceOption="Option2.1"},label:{Text("Option2.1")})
+                 Button(
+                    action: {choiceOption="Option2.2"},label:{Text("Option2.2")})
+             }label:
+             {
+                 Text("Option2")
+             }
+             Menu()
+             {
+                 Button(
+                    action: {choiceOption="Option3.1"},label:{Text("Option3.1")})
+                 Button(
+                    action: {choiceOption="Option3.2"},label:{Text("Option3.2")})
+             }label:
+             {
+                 Text("Option3")
+             }
+         }label: {
+             Button(
+                 action: {},
+                 label: {
+                     ZStack {
+                         Image(systemName: "line.3.horizontal")
+                             .resizable().frame(width: 30,height: 30)
+                     }
+                 }
+             )
+             .padding(20)
+         }
+    }
+}
+
