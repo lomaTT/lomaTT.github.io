@@ -1,0 +1,101 @@
+//
+//  ContentView.swift
+//  Lab10_2
+//
+//  Created by Ivan Filipchuk on 22/05/2023.
+//
+
+import SwiftUI
+import MapKit
+struct Place:Identifiable
+{
+    let id = UUID()
+    let name:String
+    let coordinate: CLLocationCoordinate2D
+}
+struct City: Identifiable {
+    let id = UUID()
+    let name: String
+    let coordinate: CLLocationCoordinate2D
+}
+struct ContentView: View {
+
+@State private var centerCoordinate = CLLocationCoordinate2D()
+@State private var locations = [MKPointAnnotation]()
+@State private var selectedPlace: MKPointAnnotation?
+@State private var showingPlaceDetails = false
+@State private var latitude: String = ""
+@State private var longitude: String = ""
+@State private var region = MKCoordinateRegion(
+    center: CLLocationCoordinate2D(latitude: 37, longitude: -122),
+    span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+    let annotations = [
+            City(name: "London", coordinate: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275)),
+            City(name: "Paris", coordinate: CLLocationCoordinate2D(latitude: 48.8567, longitude: 2.3508)),
+            City(name: "Rome", coordinate: CLLocationCoordinate2D(latitude: 41.9, longitude: 12.5)),
+            City(name: "Washington DC", coordinate: CLLocationCoordinate2D(latitude: 38.895111, longitude: -77.036667))
+        ]
+
+    let place1 = [Place(name:"Test",coordinate: CLLocationCoordinate2D(latitude: 37, longitude: 122))]
+var body: some View {
+
+VStack {
+    TextField("", text: $latitude).frame(height: 48)
+        .padding(EdgeInsets(top: 0, leading: 6, bottom: 0, trailing: 6))
+        .cornerRadius(5)
+        .overlay(
+            RoundedRectangle(cornerRadius: 5)
+                .stroke(lineWidth: 1.0))
+    TextField("", text: $longitude).frame(height: 48)
+        .padding(EdgeInsets(top: 0, leading: 6, bottom: 0, trailing: 6))
+        .cornerRadius(5)
+        .overlay(
+            RoundedRectangle(cornerRadius: 5)
+                .stroke(lineWidth: 1.0))
+    Button(action: {region = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: Double(latitude)!, longitude: Double(longitude)!),
+        span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))}, label: {Text("Submit")})
+    ZStack
+    {
+
+        Map(coordinateRegion: $region, annotationItems: annotations) {
+                    MapPin(coordinate: $0.coordinate)
+                }
+                .frame(width: 400, height: 300)
+        
+        Circle()
+            .fill(Color.blue)
+            .opacity(0.3)
+            .frame(width: 32, height: 32)
+    }
+VStack {
+Spacer()
+HStack {
+Spacer()
+Button(action: {
+let newLocation = MKPointAnnotation()
+newLocation.coordinate = self.centerCoordinate
+self.locations.append(newLocation)
+self.selectedPlace = newLocation
+self.showingPlaceDetails = true
+}) {
+Image(systemName: "plus")
+}
+.padding()
+.background(Color.black.opacity(0.75))
+.foregroundColor(.white)
+.font(.title)
+.clipShape(Circle())
+.padding(.trailing)
+}
+}
+}
+}
+}
+
+
+struct ContentView_Previews: PreviewProvider {
+static var previews: some View {
+ContentView()
+}
+}
