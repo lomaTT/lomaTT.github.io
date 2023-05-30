@@ -1,0 +1,433 @@
+-----------------zadanie 1-------------------------------
+//
+//  ColorSelectionView.swift
+//  Lab6_1
+//
+//  Created by Ivan Filipchuk on 04/04/2023.
+//
+
+import SwiftUI
+
+    struct ColorSelectionView: View {
+        @Binding var selectedColor: Color
+        @Binding var isPresented: Bool
+        
+        var body: some View {
+            VStack {
+                Text("Wybierz kolor")
+                    .font(.largeTitle)
+                    .padding()
+                
+                HStack {
+                    Button(action: {
+                        selectedColor = .red
+                        isPresented = false
+                    }) {
+                        ColorIndicatorView(color: .red)
+                    }
+                    
+                    Button(action: {
+                        selectedColor = .blue
+                        isPresented = false
+                    }) {
+                        ColorIndicatorView(color: .blue)
+                    }
+                    
+                    Button(action: {
+                        selectedColor = .green
+                        isPresented = false
+                    }) {
+                        ColorIndicatorView(color: .green)
+                    }
+                    
+                    Button(action: {
+                        selectedColor = .purple
+                        isPresented = false
+                    }) {
+                        ColorIndicatorView(color: .purple)
+                    }
+                }
+            }
+        }
+    }
+
+    struct ColorSelectionView_Previews: PreviewProvider {
+        static var previews: some View {
+            ColorSelectionView(selectedColor: .constant(.black), isPresented: .constant(true))
+        }
+    }
+
+    struct ColorIndicatorView: View {
+        let color: Color
+        
+        var body: some View {
+            Circle()
+                .fill(color)
+                .frame(width: 50, height: 50)
+                .padding()
+        }
+    }
+
+
+//
+//  ContentView.swift
+//  Lab6_1
+//
+//  Created by Ivan Filipchuk on 04/04/2023.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    @State var isColorSelectionActive = false
+    @State var selectedColor: Color = .black
+    
+    var body: some View {
+        VStack {
+            Text("Hello, world!")
+                .foregroundColor(selectedColor)
+                .font(.largeTitle)
+                .padding()
+            
+            Button(action: {
+                isColorSelectionActive = true
+            }) {
+                Text("Wybierz kolor")
+            }
+            .sheet(isPresented: $isColorSelectionActive, content: {
+                ColorSelectionView(selectedColor: $selectedColor, isPresented: $isColorSelectionActive)
+            })
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+------------------------------------zadanie 2-----------------------------------------------------
+
+
+//
+//  JuiceSelectionView.swift
+//  Lab6_2
+//
+//  Created by Ivan Filipchuk on 04/04/2023.
+//
+
+import SwiftUI
+
+struct JuiceSelectionView: View {
+    @Binding var selectedJuice: String?
+            
+        var body: some View {
+            VStack {
+                Text("Wybierz smak soku:")
+                    .font(.largeTitle)
+                    .padding()
+                
+                HStack {
+                    Button(action: { selectedJuice = "pomarańczowy" }) {
+                        Image(systemName: "circle.fill")
+                            .foregroundColor(.orange)
+                            .padding()
+                    }
+                    
+                    Button(action: { selectedJuice = "jabłkowy" }) {
+                        Image(systemName: "circle.fill")
+                            .foregroundColor(.green)
+                            .padding()
+                    }
+                    
+                    Button(action: { selectedJuice = "wiśniowy" }) {
+                        Image(systemName: "circle.fill")
+                            .foregroundColor(.red)
+                            .padding()
+                    }
+                }
+            }
+        }
+    }
+
+  struct JuiceSelectionView_Previews: PreviewProvider {
+      static var previews: some View {
+          JuiceSelectionView(selectedJuice: .constant(nil))
+      }
+  }
+//
+//  CoffeeSelectionView.swift
+//  Lab6_2
+//
+//  Created by Ivan Filipchuk on 04/04/2023.
+//
+
+import SwiftUI
+
+
+struct CoffeeSelectionView: View {
+    
+        @Binding var selectedCoffee: String?
+            
+        init(selectedCoffee: Binding<String?>) {
+            _selectedCoffee = selectedCoffee
+        }
+            
+        var body: some View {
+            VStack {
+                Text("Wybierz rodzaj kawy:")
+                    .font(.largeTitle)
+                    .padding()
+                
+                HStack {
+                    Button(action: { selectedCoffee = "espresso" }) {
+                        Image(systemName: "circle.fill")
+                            .foregroundColor(.black)
+                            .padding()
+                    }
+                    
+                    Button(action: { selectedCoffee = "cappuccino" }) {
+                        Image(systemName: "circle.fill")
+                            .foregroundColor(.blue)
+                            .padding()
+                    }
+                    
+                    Button(action: { selectedCoffee = "latte" }) {
+                        Image(systemName: "circle.fill")
+                            .foregroundColor(.green)
+                            .padding()
+                    }
+                    
+                    Button(action: { selectedCoffee = "amerykańska" }) {
+                        Image(systemName: "circle.fill")
+                            .foregroundColor(.gray)
+                            .padding()
+                    }
+                }
+            }
+        }
+    }
+
+    struct CoffeeSelectionView_Previews: PreviewProvider {
+        static var previews: some View {
+            CoffeeSelectionView(selectedCoffee: .constant(nil))
+        }
+    }
+
+//
+//  CoffeeSelectionView.swift
+//  Lab6_2
+//
+//  Created by Ivan Filipchuk on 04/04/2023.
+//
+
+import SwiftUI
+
+
+struct CoffeeSelectionView: View {
+    
+        @Binding var selectedCoffee: String?
+            
+        init(selectedCoffee: Binding<String?>) {
+            _selectedCoffee = selectedCoffee
+        }
+            
+        var body: some View {
+            VStack {
+                Text("Wybierz rodzaj kawy:")
+                    .font(.largeTitle)
+                    .padding()
+                
+                HStack {
+                    Button(action: { selectedCoffee = "espresso" }) {
+                        Image(systemName: "circle.fill")
+                            .foregroundColor(.black)
+                            .padding()
+                    }
+                    
+                    Button(action: { selectedCoffee = "cappuccino" }) {
+                        Image(systemName: "circle.fill")
+                            .foregroundColor(.blue)
+                            .padding()
+                    }
+                    
+                    Button(action: { selectedCoffee = "latte" }) {
+                        Image(systemName: "circle.fill")
+                            .foregroundColor(.green)
+                            .padding()
+                    }
+                    
+                    Button(action: { selectedCoffee = "amerykańska" }) {
+                        Image(systemName: "circle.fill")
+                            .foregroundColor(.gray)
+                            .padding()
+                    }
+                }
+            }
+        }
+    }
+
+    struct CoffeeSelectionView_Previews: PreviewProvider {
+        static var previews: some View {
+            CoffeeSelectionView(selectedCoffee: .constant(nil))
+        }
+    }
+//
+//  ContentView.swift
+//  Lab6_2
+//
+//  Created by Ivan Filipchuk on 04/04/2023.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    @State private var selectedJuice: String?
+        @State private var selectedCoffee: String?
+        
+        var body: some View {
+            NavigationView {
+                VStack {
+                    Text("Twoje zamówienie:")
+                        .font(.largeTitle)
+                        .padding()
+                    
+                    Text("Sok: \(selectedJuice ?? "-")")
+                        .font(.title)
+                        .padding()
+                    
+                    Text("Kawa: \(selectedCoffee ?? "-")")
+                        .font(.title)
+                        .padding()
+                    
+                    Spacer()
+                    
+                    NavigationLink(
+                        destination: JuiceSelectionView(selectedJuice: $selectedJuice),
+                        label: {
+                            Text("Wybierz sok")
+                                .font(.title)
+                                .padding()
+                        })
+                    
+                    NavigationLink(
+                        destination: CoffeeSelectionView(selectedCoffee: $selectedCoffee),
+                        label: {
+                            Text("Wybierz kawę")
+                                .font(.title)
+                                .padding()
+                        })
+                }
+                .navigationBarTitle("Zamówienie")
+            }
+        }
+    }
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+----------------------------zadanie 3--------------------------------
+//
+//  ContentView.swift
+//  laab63
+//
+//  Created by Ivan Filipchuk on 04/04/2023.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    @State var author = ""
+
+    let books = [
+        Book(title: "Władca Pierścieni", author: "J.R.R. Tolkien", availableCopies: 5),
+        Book(title: "Harry Potter i Kamień Filozoficzny", author: "J.K. Rowling", availableCopies: 2),
+        Book(title: "Przygody Tomka Sawyera", author: "Mark Twain", availableCopies: 3),
+        Book(title: "Pan Tadeusz", author: "Adam Mickiewicz", availableCopies: 1),
+    ]
+
+    var filteredBooks: [Book] {
+        guard !author.isEmpty else { return [] }
+        return books.filter { $0.author == author }
+    }
+
+    var body: some View {
+        NavigationView {
+            VStack {
+                NavigationLink(destination: SearchView(author: $author)) {
+                    Text("Wyszukaj autora")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                }
+                if !filteredBooks.isEmpty {
+                    List(filteredBooks, id: \.self) { book in
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(book.title)
+                                    .font(.headline)
+                                Text(book.author)
+                                    .font(.subheadline)
+                            }
+                            Spacer()
+                            Text("\(book.availableCopies) szt.")
+                        }
+                    }
+                } else {
+                    Text("Brak wyników")
+                        .font(.headline)
+                        .foregroundColor(.gray)
+                        .padding()
+                }
+                Spacer()
+            }
+            .navigationBarTitle("Wyszukiwarka książek")
+        }
+    }
+}
+
+struct Book: Hashable {
+    let title: String
+    let author: String
+    let availableCopies: Int
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+
+//
+//  SearchView.swift
+//  laab63
+//
+//  Created by Ivan Filipchuk on 04/04/2023.
+//
+
+import SwiftUI
+
+struct SearchView: View {
+    @Binding var author: String
+
+       var body: some View {
+           VStack {
+               Text("Wpisz autora:")
+                   .font(.headline)
+               TextField("Nazwisko autora", text: $author)
+                   .textFieldStyle(RoundedBorderTextFieldStyle())
+                   .padding()
+           }
+           .navigationBarTitle("Wyszukiwanie autora")
+       }
+   }
+
+   struct SearchView_Previews: PreviewProvider {
+       static var previews: some View {
+           SearchView(author: .constant(""))
+       }
+   }
+
