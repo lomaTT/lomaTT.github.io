@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edcb9f22-f76b-4554-8c79-d0b7f96dfa3c" name="Changes" comment="added hexOcean techtask">
-      <change beforePath="$PROJECT_DIR$/hexOcean/asset-manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexOcean/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexOcean/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexOcean/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexOcean/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexOcean/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexOcean/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexOcean/static/css/main.0003b565.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexOcean/static/css/main.0003b565.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexOcean/static/js/787.df9b92a2.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexOcean/static/js/787.df9b92a2.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexOcean/static/js/main.4b8910da.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexOcean/static/js/main.4b8910da.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexOcean/static/js/main.4b8910da.js.map" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/to-do-img.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +63,7 @@
       <workItem from="1683901832694" duration="95000" />
       <workItem from="1684288879091" duration="1011000" />
       <workItem from="1684291140967" duration="27000" />
+      <workItem from="1688934405351" duration="322000" />
     </task>
     <task id="LOCAL-00001" summary="added calculatorApp, changed description of Aviator">
       <created>1683591481868</created>
