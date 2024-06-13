@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="edcb9f22-f76b-4554-8c79-d0b7f96dfa3c" name="Changes" comment="added hexOcean techtask">
+    <list default="true" id="edcb9f22-f76b-4554-8c79-d0b7f96dfa3c" name="Changes" comment="changes">
+      <change afterPath="$PROJECT_DIR$/jokeGame/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jokeGame/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jokeGame/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +80,7 @@
       <workItem from="1684288879091" duration="1011000" />
       <workItem from="1684291140967" duration="27000" />
       <workItem from="1688934405351" duration="322000" />
-      <workItem from="1718315624454" duration="61000" />
+      <workItem from="1718315624454" duration="538000" />
     </task>
     <task id="LOCAL-00001" summary="added calculatorApp, changed description of Aviator">
       <created>1683591481868</created>
@@ -101,7 +103,15 @@
       <option name="project" value="LOCAL" />
       <updated>1683664798209</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="changes">
+      <option name="closed" value="true" />
+      <created>1718315790332</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718315790332</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +145,7 @@
     <MESSAGE value="added calculatorApp, changed description of Aviator" />
     <MESSAGE value="fixed bug with calc link" />
     <MESSAGE value="added hexOcean techtask" />
-    <option name="LAST_COMMIT_MESSAGE" value="added hexOcean techtask" />
+    <MESSAGE value="changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes" />
   </component>
 </project>
